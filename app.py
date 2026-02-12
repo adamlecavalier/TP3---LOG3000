@@ -11,6 +11,10 @@ OPS = {
 }
 
 def calculate(expr: str):
+    '''
+    Analyse une chaîne de de caractères pour effectuer une opération mathématique simple (ex: "3 + 4").
+
+    '''
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
@@ -41,7 +45,12 @@ def calculate(expr: str):
 
     return OPS[op_char](a, b)
 
+# TODO: Commentaire
+
 @app.route('/', methods=['GET', 'POST'])
+
+# TODO: Commentaire
+
 def index():
     result = ""
     if request.method == 'POST':
@@ -51,6 +60,8 @@ def index():
         except Exception as e:
             result = f"Error: {e}"
     return render_template('index.html', result=result)
+
+# TODO: Commentaire
 
 if __name__ == '__main__':
     app.run(debug=True)
