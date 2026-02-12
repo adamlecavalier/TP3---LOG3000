@@ -1,4 +1,4 @@
-# Devoir #3 LOG3000 - Projet Calculatrice Web (Flask)
+# Flask Calculator
 
 ## Équipe 31
 

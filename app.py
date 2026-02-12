@@ -10,10 +10,21 @@ OPS = {
     '/': divide,
 }
 
-def calculate(expr: str):
+def calculate(expr: str) -> float:
     '''
-    Analyse une chaîne de de caractères pour effectuer une opération mathématique simple (ex: "3 + 4").
+    Analyse une chaîne de de caractères pour effectuer une opération mathématique
+    simple (ex: "3 + 4") et retourne le résultat numérique.
 
+    Paramètres:
+        expr (str): Expression mathématique contenant deux opérandes
+                    numériques et un seul opérateur supporté.
+
+    Retour:
+        float: Résultat de l'opération mathématique.
+
+    Exceptions:
+        ValueError: Si l'expression est vide, mal formée, contient plus d'un
+                    opérateur, ou si les opérandes ne sont pas des nombres.
     '''
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
@@ -31,7 +42,7 @@ def calculate(expr: str):
             op_char = ch
 
     if op_pos <= 0 or op_pos >= len(s) - 1:
-        # operator at start/end or not found
+        # Cette vérification assure qu'il y a exactement deux opérandes dans l'expression
         raise ValueError("invalid expression format")
 
     left = s[:op_pos]
@@ -45,13 +56,24 @@ def calculate(expr: str):
 
     return OPS[op_char](a, b)
 
-# TODO: Commentaire
-
 @app.route('/', methods=['GET', 'POST'])
-
-# TODO: Commentaire
-
 def index():
+    '''
+    Gère la route principale de l'application web de calculatrice.
+
+    Méthodes HTTP:
+    GET : Affiche la page initiale avec un affichage vide.
+    POST : Récupère l'expression envoyée par le formulaire,
+            appelle la fonction de calcul et affiche le résultat.
+
+    Entrées:
+        Reçoit une donnée de formulaire nommée 'display' contenant
+        l'expression mathématique saisie par l'utilisateur.
+
+    Retour:
+        Page HTML 'index.html' rendue avec le résultat du calcul
+        ou un message d'erreur si l'expression est invalide.
+    '''
     result = ""
     if request.method == 'POST':
         expression = request.form.get('display', '')
@@ -60,8 +82,6 @@ def index():
         except Exception as e:
             result = f"Error: {e}"
     return render_template('index.html', result=result)
-
-# TODO: Commentaire
 
 if __name__ == '__main__':
     app.run(debug=True)
