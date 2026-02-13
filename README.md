@@ -76,7 +76,8 @@ Pour assurer une collaboration efficace au sein de l'équipe, nous suivons ce fl
 
 ### 2. Création de branches
 Ne travaillez jamais directement sur la branche `main`. Créez une branche descriptive pour chaque tâche :
-> `git checkout -b nom-de-votre-branche`
+
+    git checkout -b nom-de-votre-branche
 
 ### 3. Pull Requests (PR)
 * Une fois vos modifications terminées et testées localement, poussez votre branche sur GitHub.
