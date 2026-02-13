@@ -46,6 +46,6 @@ def divide(a: float,b: float) -> float:
         b (float): Diviseur.
 
     Retour:
-        float: Résultat de a // b.
+        float: Résultat de a / b.
     '''
-    return a // b
+    return a / b
