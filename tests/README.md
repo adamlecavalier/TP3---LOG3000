@@ -17,4 +17,4 @@ Les fichiers de test couvrent les aspects suivants :
 
 Pour lancer tous les tests à partir de la racine du projet, utilisez la commande suivante :
 
-    `python -m unittest discover tests`
+    python -m unittest discover tests
