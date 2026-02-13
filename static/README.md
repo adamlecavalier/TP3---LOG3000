@@ -19,7 +19,7 @@ sont pas générés dynamiquement par Flask.
   - L’ergonomie générale de l’application
 
 
-## 4. Dépendances et hypothèses
+## 3. Dépendances et hypothèses
 
 - Utilisé par `index.html` via `url_for('static', filename='style.css')`
 - Suppose la présence des classes HTML suivantes :
