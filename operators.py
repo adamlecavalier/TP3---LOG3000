@@ -16,13 +16,13 @@ def subtract(a: float,b: float) -> float:
     Soustraction de deux nombres.
 
     Paramètres:
-        a (float): Nombre à soustraire.
-        b (float): Nombre duquel on soustrait.
+        a (float): Nombre duquel on soustrait.
+        b (float): Nombre à soustraire.
     
     Retour:
-        float: Résultat de b - a.
+        float: Résultat de a - b.
     '''
-    return b - a
+    return a - b
 
 def multiply(a: float,b: float) -> float:
     '''
